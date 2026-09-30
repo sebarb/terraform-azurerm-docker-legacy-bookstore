@@ -15,7 +15,6 @@
 
         <?php endforeach; ?>
 
-        <a href="statistici.php">Statistici</a>
     </div>
 
 
