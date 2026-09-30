@@ -25,7 +25,6 @@ Work completed so far:
 - Added prepared statements
 - Replaced legacy password handling with `password_hash()` / `password_verify()`
 - Preserved temporary compatibility with legacy MD5 password hashes for migration purposes
-- Fixed UTF-8 / `utf8mb4` support
 - Separated credentials from source code using environment variables
 - Containerized the PHP/Apache application
 - Containerized MySQL for local development

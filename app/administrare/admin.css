@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f3ef;
+    color: #292724;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+a {
+    color: #704c32;
+}
+
+.admin-header {
+    background: #ffffff;
+    border-bottom: 1px solid #ded9d2;
+}
+
+.admin-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 22px 30px 0;
+}
+
+.admin-title {
+    margin: 0 0 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: normal;
+    color: #292724;
+}
+
+.admin-nav {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.admin-nav a {
+    display: block;
+    padding: 11px 15px;
+    color: #625d56;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+}
+
+.admin-nav a:hover {
+    color: #292724;
+    border-bottom-color: #a77b58;
+}
+
+.admin-nav .logout {
+    margin-left: auto;
+}
+
+.admin-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 30px 60px;
+}
+
+.admin-main h1,
+.admin-main h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    color: #292724;
+}
+
+.admin-main h2 {
+    font-size: 25px;
+    margin-top: 0;
+}
+
+/* Dashboard */
+
+.admin-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.admin-card {
+    background: #fff;
+    border: 1px solid #e2ddd6;
+    border-radius: 8px;
+    padding: 22px;
+}
+
+.admin-card-label {
+    color: #77716a;
+    font-size: 14px;
+}
+
+.admin-card-value {
+    margin-top: 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+}
+
+/* Tables */
+
+.admin-table-wrap {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid #e2ddd6;
+    border-radius: 8px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #ebe7e2;
+}
+
+.admin-table th {
+    background: #faf9f7;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: #68625c;
+}
+
+/* Forms */
+
+.admin-form {
+    max-width: 720px;
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #e2ddd6;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px 11px;
+    border: 1px solid #ccc5bd;
+    border-radius: 5px;
+    background: #fff;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button,
+.admin-button {
+    display: inline-block;
+    width: auto;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 5px;
+    background: #704c32;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover,
+.admin-button:hover {
+    opacity: .88;
+}
+
+.admin-message {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    background: #edf5e9;
+    border: 1px solid #cfdfc7;
+    border-radius: 5px;
+}
+
+/* Login */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border: 1px solid #e2ddd6;
+    border-radius: 10px;
+    padding: 35px;
+}
+
+.login-card h1 {
+    margin: 0 0 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.login-card .subtitle {
+    margin: 0 0 25px;
+    color: #77716a;
+}
+
+.login-card button {
+    width: 100%;
+}
+
+@media (max-width: 650px) {
+
+    .admin-header-inner,
+    .admin-main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .admin-nav .logout {
+        margin-left: 0;
+    }
+}
+
+.admin-table input,
+.admin-table textarea {
+    min-width: 150px;
+}
+
+.admin-table textarea {
+    min-width: 260px;
+}
+
+.admin-table td:last-child {
+    white-space: nowrap;
+}
+
+.admin-table td button {
+    margin: 2px;
+}
+
+.admin-table td {
+    vertical-align: middle;
+}
