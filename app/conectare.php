@@ -1,5 +1,5 @@
 <?php
-
+// Configurare PHP 8+ / PDO. Valorile pot fi suprascrise prin variabile de mediu.
 $dbHost = getenv('DB_HOST') ?: 'localhost';
 $dbName = getenv('DB_NAME') ?: 'librarie';
 $dbUser = getenv('DB_USER') ?: 'root';

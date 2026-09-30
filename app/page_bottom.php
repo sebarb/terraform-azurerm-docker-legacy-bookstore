@@ -1,9 +1,1 @@
-</tr>
-</table>
-<table border="0" bgcolor="#f9f1d0" width="800px">
-<tr>
-<td><marquee>Selin Barbulescu 2004</marquee></td>
-</tr>
-</table>
-</body>
-</html>
+</section></main><footer class="site-footer"><span>© 2004–2026 Librăria mea · proiect restaurat</span><a href="administrare/">Administrare</a></footer></body></html>
