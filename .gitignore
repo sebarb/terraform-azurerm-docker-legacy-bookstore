@@ -1,4 +1,9 @@
+#Old local documentation
 README_DOCKER.txt
 README_RESTAURARE.txt
-app/imagini/Thumbs.db
+#OS generated files
+Thumbs.db
+.DS_Store
+#Environment/secrets
 .env
+!.env.example
