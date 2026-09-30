@@ -1,0 +1,1 @@
+<?php require 'autorizare.php';include 'admin_top.php';$counts=[];foreach(['carti','autori','domenii','comentarii','vanzari'] as $t)$counts[$t]=(int)$pdo->query("SELECT COUNT(*) FROM $t")->fetchColumn();?><p>Bine ai venit, <b><?=h($_SESSION['nume_admin'])?></b>.</p><ul><?php foreach($counts as $k=>$v):?><li><?=h(ucfirst($k))?>: <?=$v?></li><?php endforeach;?></ul></body></html>

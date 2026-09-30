@@ -1,0 +1,7 @@
+<?php session_start(); require 'conectare.php'; include 'page_top.php'; include 'meniu.php';
+$newBooks=$pdo->query('SELECT c.id_carte,c.titlu,a.nume_autor,c.pret FROM carti c JOIN autori a ON a.id_autor=c.id_autor ORDER BY c.data DESC LIMIT 3')->fetchAll();
+$popular=$pdo->query('SELECT c.id_carte,c.titlu,a.nume_autor,c.pret,COALESCE(SUM(v.nr_buc),0) vandute FROM carti c JOIN autori a ON a.id_autor=c.id_autor LEFT JOIN vanzari v ON v.id_carte=c.id_carte GROUP BY c.id_carte,c.titlu,a.nume_autor,c.pret ORDER BY vandute DESC,c.titlu LIMIT 3')->fetchAll();
+function bookCell(array $b): void { $id=(int)$b['id_carte']; echo '<td align="center" width="200">'; $img="./coperti/$id.jpg"; if(file_exists($img)) echo '<img src="'.h($img).'" width="75" height="100"><br>'; else echo '<div style="width:75px;height:100px;border:1px solid #000;background:#ccc;margin:auto">Fara imagine</div>'; echo '<b><a href="carte.php?id_carte='.$id.'">'.h($b['titlu']).'</a></b><br>de <i>'.h($b['nume_autor']).'</i><br>Pret: '.number_format((float)$b['pret'],2,',','.').' lei</td>'; }
+?>
+<td valign="top"><table border="0" cellpadding="15"><tr><td><h1>Prima pagina</h1></td></tr><tr><td><b>Cele mai noi carti</b><table cellpadding="5" bgcolor="#f9f1d0"><tr><?php foreach($newBooks as $b) bookCell($b); ?></tr></table></td></tr><tr><td><b>Cele mai populare carti</b><table cellpadding="5" bgcolor="#f9f1d0"><tr><?php foreach($popular as $b) bookCell($b); ?></tr></table></td></tr></table></td>
+<?php include 'page_bottom.php'; ?>

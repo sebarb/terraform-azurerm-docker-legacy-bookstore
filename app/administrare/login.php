@@ -1,0 +1,4 @@
+<?php
+session_start(); require '../conectare.php'; $name=trim($_POST['nume']??'');$pass=$_POST['parola']??'';if($name===''||$pass==='') exit('Trebuie sa completezi ambele campuri! <a href="index.php">Inapoi</a>');$s=$pdo->prepare('SELECT id_admin,admin_nume,admin_parola FROM admin WHERE admin_nume=?');$s->execute([$name]);$a=$s->fetch();$ok=false;if($a){$hash=$a['admin_parola'];$ok=password_verify($pass,$hash)||hash_equals($hash,md5($pass));if($ok && strlen($hash)===32){$new=password_hash($pass,PASSWORD_DEFAULT);$u=$pdo->prepare('UPDATE admin SET admin_parola=? WHERE id_admin=?');$u->execute([$new,$a['id_admin']]);}}
+if(!$ok) exit('Nume sau parola gresite! <a href="index.php">Inapoi</a>');session_regenerate_id(true);$_SESSION['admin_id']=(int)$a['id_admin'];$_SESSION['nume_admin']=$a['admin_nume'];header('Location: admin.php');exit;
+?>

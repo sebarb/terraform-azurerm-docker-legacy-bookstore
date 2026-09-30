@@ -1,0 +1,24 @@
+<style type="text/css">
+
+body{
+	bgcolor:red;
+	font-color:red;
+}
+p,td{
+	font-family:verdana,arial,sans-serif;
+	font-size:12px;
+}
+h1{
+	font-family:times new roman,times,serif;
+	font-size:18px;
+	font-weight:bold;
+	color:#336699;
+	font-style:italic;
+}
+.titlu{
+	font-family:verdana,arial,sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color:#0066cc;
+}
+</style>
